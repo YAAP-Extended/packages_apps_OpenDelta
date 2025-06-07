@@ -40,6 +40,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Locale;
+import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -202,7 +203,8 @@ public class Download {
 
     public boolean start() {
         mStatus = -1;
-        Logger.d("download: %s", mURL);
+        String mirrorUrl = getMirrorUrl(mURL);
+        Logger.d("download: %s (mirror: %s)", mURL, mirrorUrl);
 
         HttpsURLConnection urlConnection = null;
         InputStream is = null;
@@ -225,14 +227,14 @@ public class Download {
         try {
             final String userFN = mFile.getName().substring(0, mFile.getName().length() - 5);
             mState.update(State.ACTION_DOWNLOADING, 0f, 0L, 0L, userFN, null);
-            urlConnection = setupHttpsRequest(mURL);
+            urlConnection = setupHttpsRequest(mirrorUrl);
             if (urlConnection == null) return false;
 
             len = getSize(urlConnection);
             mPrefs.edit().putLong(UpdateService.PREF_DOWNLOAD_SIZE, len).apply();
             if (offset > 0 && offset < len) {
                 urlConnection.disconnect();
-                urlConnection = setupHttpsRequest(mURL, offset);
+                urlConnection = setupHttpsRequest(mirrorUrl, offset);
                 if (urlConnection == null) return false;
                 Logger.d("Resuming download at: " + offset);
             }
@@ -400,5 +402,9 @@ public class Download {
         while (sb.length() < digest.getDigestLength() * 2)
             sb.insert(0, "0");
         return sb.toString();
+    }
+
+    private String getMirrorUrl(String baseUrl) {
+        return SourceForgeMirrors.getMirrorUrl(baseUrl, mUpdateService);
     }
 }

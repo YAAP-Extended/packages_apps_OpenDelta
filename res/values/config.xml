@@ -11,7 +11,7 @@
 	<string name="property_device">ro.yaap.device</string>
 
 	<!-- %s is expanded to property_version value. .zip, .delta, .update, .sign extensions added when needed -->
-	<string name="filename_base">YAAP-%s</string>
+	<string name="filename_base">YAAP-Extended-%s</string>
 
 	<!-- Path deltas are stored, relative to sdcard root -->
 	<string name="path_base">OpenDelta</string>

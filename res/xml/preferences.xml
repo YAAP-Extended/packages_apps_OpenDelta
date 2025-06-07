@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_category_mirrors">
+        <SwitchPreference
+            android:key="auto_select_mirror"
+            android:title="@string/pref_auto_select_mirror"
+            android:summary="@string/pref_auto_select_mirror_summary"
+            android:defaultValue="true" />
+            
+        <ListPreference
+            android:key="selected_mirror"
+            android:title="@string/pref_select_mirror"
+            android:summary="@string/pref_select_mirror_summary"
+            android:dependency="auto_select_mirror"
+            android:entries="@array/mirror_entries"
+            android:entryValues="@array/mirror_values" />
+    </PreferenceCategory>
+</PreferenceScreen>

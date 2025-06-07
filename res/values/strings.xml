@@ -212,4 +212,11 @@
     <string name="error_flash_file_1">Error parsing file path from picker</string>
     <string name="error_flash_file_2">File no longer exists</string>
     <string name="error_flash_file_3">File is not a zip</string>
+
+    <!-- Mirror preferences -->
+    <string name="pref_category_mirrors">SourceForge Mirrors</string>
+    <string name="pref_auto_select_mirror">Auto-select mirror</string>
+    <string name="pref_auto_select_mirror_summary">Automatically select the best mirror based on your location</string>
+    <string name="pref_select_mirror">Select mirror</string>
+    <string name="pref_select_mirror_summary">Choose a specific SourceForge mirror for downloads</string>
 </resources>

@@ -43,4 +43,23 @@
 		<item>7</item>
 	</string-array>
 
+	<!-- SourceForge mirrors -->
+	<string-array name="mirror_entries">
+		<item>Automatic selection</item>
+		<item>SourceForge.net (USA)</item>
+		<item>SourceForge.net (Europe)</item>
+		<item>SourceForge.net (Asia)</item>
+		<item>SourceForge.net (Australia)</item>
+		<item>SourceForge.net (South America)</item>
+	</string-array>
+
+	<string-array name="mirror_values">
+		<item>auto</item>
+		<item>https://sourceforge.net/projects/</item>
+		<item>https://sourceforge.net/projects/</item>
+		<item>https://sourceforge.net/projects/</item>
+		<item>https://sourceforge.net/projects/</item>
+		<item>https://sourceforge.net/projects/</item>
+	</string-array>
+
 </resources>

@@ -267,4 +267,31 @@ public class Config {
     public static boolean isABDevice() {
         return SystemProperties.getBoolean(PROP_AB_DEVICE, false);
     }
+
+    public String getProjectName() {
+        String url = url_base;
+        String[] parts = url.split("/");
+        for (int i = 0; i < parts.length; i++) {
+            if (parts[i].equals("projects")) {
+                return parts[i + 1];
+            }
+        }
+        return "";
+    }
+    
+    public String getPath() {
+        String url = url_base;
+        String[] parts = url.split("/");
+        StringBuilder path = new StringBuilder();
+        boolean foundFiles = false;
+        for (String part : parts) {
+            if (foundFiles) {
+                path.append(part).append("/");
+            }
+            if (part.equals("files")) {
+                foundFiles = true;
+            }
+        }
+        return path.toString();
+    }
 }

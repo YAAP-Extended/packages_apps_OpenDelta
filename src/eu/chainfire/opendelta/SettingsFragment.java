@@ -93,12 +93,17 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
     private final Handler mMainHandler = new Handler(Looper.getMainLooper());
     private Handler mHandler = null;
 
+    private SwitchPreferenceCompat autoSelectMirror;
+    private ListPreference selectedMirror;
+
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.preferences);
+
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         mConfig = Config.getInstance(getContext());
 
-        addPreferencesFromResource(R.xml.settings);
         mNetworksConfig = findPreference(KEY_NETWORKS);
         mNetworksConfig.setChecked(prefs.getBoolean(UpdateService.PREF_AUTO_UPDATE_METERED_NETWORKS, false));
 
@@ -175,6 +180,27 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
         mCertStatus = findPreference(KEY_CERT_STATUS);
 
         updateCertStatus(-1);
+
+        // Initialize mirror preferences
+        autoSelectMirror = (SwitchPreferenceCompat) findPreference("auto_select_mirror");
+        selectedMirror = (ListPreference) findPreference("selected_mirror");
+        
+        // Set up mirror selection based on auto-select preference
+        if (autoSelectMirror != null && selectedMirror != null) {
+            boolean autoSelect = PreferenceManager.getDefaultSharedPreferences(getActivity())
+                    .getBoolean("auto_select_mirror", true);
+            
+            selectedMirror.setEnabled(!autoSelect);
+            
+            autoSelectMirror.setOnPreferenceChangeListener((preference, newValue) -> {
+                boolean auto = (Boolean) newValue;
+                selectedMirror.setEnabled(!auto);
+                return true;
+            });
+
+            // Обновление списка доступных зеркал
+            updateMirrorsList();
+        }
     }
 
     @Override
@@ -469,5 +495,22 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
         prefs.edit().putString(UpdateService.PREF_LATEST_FULL_NAME, null).commit();
         prefs.edit().putString(UpdateService.PREF_READY_FILENAME_NAME, null).commit();
         prefs.edit().putLong(UpdateService.PREF_DOWNLOAD_SIZE, -1).commit();
+    }
+
+    private void updateMirrorsList() {
+        if (selectedMirror != null) {
+            List<SourceForgeMirrors.Mirror> mirrors = SourceForgeMirrors.getAvailableMirrors();
+            String[] entries = new String[mirrors.size()];
+            String[] values = new String[mirrors.size()];
+            
+            for (int i = 0; i < mirrors.size(); i++) {
+                SourceForgeMirrors.Mirror mirror = mirrors.get(i);
+                entries[i] = mirror.name + " (" + mirror.country + ")";
+                values[i] = mirror.code;
+            }
+            
+            selectedMirror.setEntries(entries);
+            selectedMirror.setEntryValues(values);
+        }
     }
 }
