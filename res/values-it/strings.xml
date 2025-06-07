@@ -73,4 +73,10 @@
     <string name="clean_files_feedback" formatted="false">%d file eliminati. Ora seleziona \'Controllo aggiornamenti\'</string>
     <string name="state_error_permissions">Nessun permesso per lo storage.</string>
     <string name="state_error_flash">Impossibile inizializzare l\'installazione. Pulisci /cache e riprova.</string>
+    <!-- Mirror preferences -->
+    <string name="pref_category_mirrors">Mirror SourceForge</string>
+    <string name="pref_auto_select_mirror">Selezione automatica mirror</string>
+    <string name="pref_auto_select_mirror_summary">Seleziona automaticamente il mirror migliore in base alla tua posizione</string>
+    <string name="pref_select_mirror">Seleziona mirror</string>
+    <string name="pref_select_mirror_summary">Scegli un mirror SourceForge specifico per i download</string>
 </resources>

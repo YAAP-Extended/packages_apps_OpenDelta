@@ -73,4 +73,10 @@
     <string name="clean_files_feedback" formatted="false">%d archivos borrados. Ahora presione \'Comprobar actualizaciones\'</string>
     <string name="state_error_permissions">Sin permisos de almacenamiento.</string>
     <string name="state_error_flash">Ajuste de flash fallado. Limpia /cache y reintenta.</string>
+    <!-- Mirror preferences -->
+    <string name="pref_category_mirrors">Espejos de SourceForge</string>
+    <string name="pref_auto_select_mirror">Selección automática de espejo</string>
+    <string name="pref_auto_select_mirror_summary">Seleccionar automáticamente el mejor espejo según su ubicación</string>
+    <string name="pref_select_mirror">Seleccionar espejo</string>
+    <string name="pref_select_mirror_summary">Elegir un espejo específico de SourceForge para las descargas</string>
 </resources>

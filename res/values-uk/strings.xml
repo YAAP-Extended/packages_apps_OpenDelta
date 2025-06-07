@@ -168,4 +168,11 @@
     <string name="error_ab_98">Система оновлення не готова\nПерезавантажте пристрій і спробуйте ще раз</string>
     <string name="error_ab_97">Файл оновлення пошкоджено\nЗавантажте файл ще раз</string>
     <string name="error_ab_96">Не є файлом оновлення\nЗавантажте файл ще раз</string>
+
+    <!-- Mirror preferences -->
+    <string name="pref_category_mirrors">Дзеркала SourceForge</string>
+    <string name="pref_auto_select_mirror">Автоматичний вибір дзеркала</string>
+    <string name="pref_auto_select_mirror_summary">Автоматично вибирати найкраще дзеркало на основі вашого місцезнаходження</string>
+    <string name="pref_select_mirror">Вибрати дзеркало</string>
+    <string name="pref_select_mirror_summary">Виберіть конкретне дзеркало SourceForge для завантажень</string>
 </resources>

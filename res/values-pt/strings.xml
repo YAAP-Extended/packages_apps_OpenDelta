@@ -39,4 +39,11 @@
 
     <string name="button_check_now">Verificar agora &#8230;</string>
     <string name="button_flash_now">Aplicar atualizações</string>
+
+    <!-- Mirror preferences -->
+    <string name="pref_category_mirrors">Espelhos SourceForge</string>
+    <string name="pref_auto_select_mirror">Seleção automática de espelho</string>
+    <string name="pref_auto_select_mirror_summary">Selecionar automaticamente o melhor espelho com base na sua localização</string>
+    <string name="pref_select_mirror">Selecionar espelho</string>
+    <string name="pref_select_mirror_summary">Escolher um espelho SourceForge específico para downloads</string>
 </resources>

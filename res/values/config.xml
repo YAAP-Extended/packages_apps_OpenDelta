@@ -26,7 +26,7 @@
 	<string name="url_base_full_sum">https://sourceforge.net/projects/guidixproject/files/YAAEXP/stable/%s/</string>
 
 	<!-- URL base suffix - Used only for download -->
-	<string name="url_base_suffix"></string>
+	<string name="url_base_suffix">/download</string>
 
 	<!-- the branch name to format URLs with -->
 	<string name="url_branch_name">full-signed</string>

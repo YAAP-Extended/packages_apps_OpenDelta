@@ -87,4 +87,10 @@
     <string name="progress_status_7">Signalement de l\'erreur &#8230;</string>
     <string name="progress_status_8">Tentative de retour en arrière &#8230;</string>
     <string name="progress_status_9">Désactivé.</string>
+    <!-- Mirror preferences -->
+    <string name="pref_category_mirrors">Miroirs SourceForge</string>
+    <string name="pref_auto_select_mirror">Sélection automatique du miroir</string>
+    <string name="pref_auto_select_mirror_summary">Sélectionner automatiquement le meilleur miroir en fonction de votre emplacement</string>
+    <string name="pref_select_mirror">Sélectionner un miroir</string>
+    <string name="pref_select_mirror_summary">Choisir un miroir SourceForge spécifique pour les téléchargements</string>
 </resources>

@@ -102,4 +102,10 @@
     <string name="text_info_section">Drücken Sie die auf prüfen, um zu sehen, ob ein Update verfügbar ist. Nach einem Update werden Sie zum Neustart aufgefordert. Geräte mit einem traditionellen Recovery-basierten Update werden beim Neustart in die Recovery gewechselt, um den Flash-Prozess auszuführen. Wenn Ihr Gerät nahtlose Updates (A/B) unterstützt, wird das Update durch den Neustart aktiviert.</string>
     <string name="error_ab_51">Die aktuelle Version ist neuer als das Update</string>
     <string name="error_ab_52">Update bereits installiert und muss neu gestartet werden</string>
+    <!-- Mirror preferences -->
+    <string name="pref_category_mirrors">SourceForge Spiegel</string>
+    <string name="pref_auto_select_mirror">Spiegel automatisch auswählen</string>
+    <string name="pref_auto_select_mirror_summary">Automatisch den besten Spiegel basierend auf Ihrem Standort auswählen</string>
+    <string name="pref_select_mirror">Spiegel auswählen</string>
+    <string name="pref_select_mirror_summary">Wählen Sie einen bestimmten SourceForge-Spiegel für Downloads</string>
 </resources>

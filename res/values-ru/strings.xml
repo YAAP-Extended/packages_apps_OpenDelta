@@ -139,6 +139,19 @@
     <string name="error_ab_51">Версия файла обновления ниже версии уже установленной ОС.</string>
     <string name="error_ab_52">Файл обновления уже установлен. Перезагрузите телефон.</string>
     <!-- Above string is WRONG. Keeping for historical reasons. This error cannot be reached unless we call applyPayload with SWITCH_SLOT_ON_REBOOT=0 -->
-    <string name="error_ab_60">Not enough free space</string>
-    <string name="error_ab_61">Device corruption\nA clean install through recovery is advised</string>
+    <string name="error_ab_60">Недостаточно свободного места</string>
+    <string name="error_ab_61">Обновление невозможно\nРекомендуется выполнить чистую установку через рекавери</string>
+    <!-- non UpdateEngine errors -->
+    <string name="error_ab_unknown">Неизвестная ошибка\nСмотрите лог</string>
+    <string name="error_ab_99">Файл обновления не найден\nПожалуйста проверьте / выберите снова</string>
+    <string name="error_ab_98">Система обновления не готова\nПерезагрузите устройство и попробуйте снова</string>
+    <string name="error_ab_97">Файл обновления поврежден\nЗагрузите файл снова</string>
+    <string name="error_ab_96">Не является файлом обновления\nЗагрузите файл снова</string>
+
+    <!-- Mirror preferences -->
+    <string name="pref_category_mirrors">Зеркала SourceForge</string>
+    <string name="pref_auto_select_mirror">Автоматический выбор зеркала</string>
+    <string name="pref_auto_select_mirror_summary">Автоматически выбирать лучшее зеркало на основе вашего местоположения</string>
+    <string name="pref_select_mirror">Выбрать зеркало</string>
+    <string name="pref_select_mirror_summary">Выберите конкретное зеркало SourceForge для загрузок</string>
 </resources>
